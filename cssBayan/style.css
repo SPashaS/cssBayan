@@ -1,0 +1,70 @@
+html,
+body {
+  font-family: sans-serif;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  background: rgb(249, 255, 236);
+}
+.bayan-block {
+  width: 100%;
+}
+.bayan-block__title {
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+.bayan-block__body {
+}
+.bayan {
+}
+.bayan__item {
+}
+.bayan__input {
+  pointer-events: none;
+  visibility: hidden;
+}
+.bayan__label {
+}
+.bayan__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+.bayan__title {
+  font-weight: 700;
+}
+.bayan__status {
+  background: center / cover url("img/icons/plus.svg");
+  background-size: 1rem 1rem;
+  height: 1rem;
+  flex: 0 0 1rem;
+}
+.bayan__content {
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  visibility: hidden;
+}
+.bayan__content img {
+  width: 100%;
+}
+
+.bayan__input:checked + .bayan__label > .bayan__content {
+  width: 100%;
+  height: auto;
+  visibility: visible;
+  transition: all 0.5s ease 0s;
+}
+
+.bayan__input:checked + .bayan__label > .bayan__header > .bayan__status {
+  background-image: url("img/icons/close.svg");
+}
