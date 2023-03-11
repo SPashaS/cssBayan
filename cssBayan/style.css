@@ -15,7 +15,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1em;
-  background: rgb(249, 255, 236);
 }
 .bayan-block {
   width: 100%;
@@ -28,24 +27,27 @@ body {
 }
 .bayan {
 }
-.bayan__item {
+.bayan__item:not(:last-child) {
+  border-bottom: 1px solid #b3b3b3;
 }
 .bayan__input {
-  pointer-events: none;
   visibility: hidden;
+  overflow: hidden;
+  display: none;
 }
 .bayan__label {
+  display: block;
+  padding: 1rem 0;
 }
 .bayan__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5em;
-  margin-bottom: 1em;
 }
 .bayan__title {
   font-weight: 700;
-  color: #0000FF;
+  transition: all 0.3s ease 0s;
 }
 .bayan__status {
   background: center / cover url("img/icons/plus.svg");
@@ -71,20 +73,72 @@ body {
   height: auto;
   visibility: visible;
   transition: all 0.5s ease 0s;
+  padding-top: 1rem;
 }
 
-.bayan__input:checked + .bayan__label > .bayan__header > .bayan__title {
+.bayan__input:checked + .bayan__label .bayan__title {
   color: #000000;
 }
-.bayan__input:checked + .bayan__label > .bayan__header > .bayan__status {
+.bayan__input:checked + .bayan__label .bayan__status {
   background-image: url("img/icons/close.svg");
 }
 
 @media (min-width: 820px) {
   html {
-    font-size: 23px;
+    font-size: 35px;
   }
   .bayan-block {
-    width: 20rem;
+    width: 40rem;
   }
+  .bayan__input:checked + .bayan__label > .bayan__content {
+    width: 70%;
+  }
+}
+@media (min-width: 1920px) {
+  html {
+    font-size: 20px;
+  }
+  .bayan-block {
+    width: 30%;
+  }
+  .bayan {
+    border: 1px solid rgba(109, 109, 109, 0.5);
+    cursor: pointer;
+    padding: 1rem;
+  }
+  .bayan__input:checked + .bayan__label > .bayan__content {
+    width: 40%;
+  }
+  .bayan__label {
+    cursor: pointer;
+  }
+  .bayan__header {
+    padding: 0 1rem;
+  }
+  .bayan__title {
+    color: #0000FF;
+  }
+  .bayan__status {
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+  }
+  .bayan__content {
+  }
+  .bayan:hover .bayan__status {
+    opacity: 1;
+  }
+  .bayan:hover .bayan__title {
+    color: #000000;
+  }
+
+  .bayan__input:hover + .bayan__label > .bayan__content {
+    width: 40%;
+    height: auto;
+    visibility: visible;
+    transition: all 0.5s ease 0s;
+  }
+}
+
+.bayan__input:hover + .bayan__label .bayan__status {
+  background-image: url("img/icons/close.svg");
 }
