@@ -53,6 +53,7 @@ body {
 .bayan__title {
   font-weight: 700;
   transition: all 0.3s ease 0s;
+  color: #0000FF;
 }
 
 .bayan__status {
@@ -74,7 +75,7 @@ body {
 }
 
 .bayan__input:checked + .bayan__label > .bayan__content {
-  width: 100%;
+  width: 60%;
   height: auto;
   visibility: visible;
   transition: all 0.5s ease 0s;
@@ -89,10 +90,38 @@ body {
   background-image: url("img/icons/close.svg");
 }
 
+@media (hover: hover) {
+  .bayan__status {
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  .bayan:hover .bayan__status {
+    opacity: 1;
+  }
+  
+  .bayan:hover .bayan__title {
+    color: #000000;
+  }
+
+  .bayan__input:hover + .bayan__label > .bayan__content {
+    width: 60%;
+    height: auto;
+    visibility: visible;
+    transition: all 0.5s ease 0s;
+    padding-top: 1rem;
+  }
+
+  .bayan__input:hover + .bayan__label .bayan__status {
+    background-image: url("img/icons/close.svg");
+    transition: all 0.3s ease 0s;
+  }
+}
+
 @media (min-width: 820px) {
 
   html {
-    font-size: 35px;
+    font-size: 2rem;
   }
 
   .bayan-block {
@@ -104,10 +133,16 @@ body {
   }
 }
 
+@media (min-width: 820px) and (hover: hover) {
+  .bayan__input:hover + .bayan__label > .bayan__content {
+    width: 70%;
+  }
+}
+
 @media (min-width: 1920px) {
 
   html {
-    font-size: 20px;
+    font-size: 1.5rem;
   }
 
   .bayan-block {
@@ -132,36 +167,10 @@ body {
     padding: 0 1rem;
   }
 
-  .bayan__title {
-    color: #0000FF;
-  }
-
-  .bayan__status {
-    opacity: 0;
-    transition: all 0.3s ease 0s;
-  }
-
-  .bayan__content {
-  }
-
-  .bayan:hover .bayan__status {
-    opacity: 1;
-  }
-  
-  .bayan:hover .bayan__title {
-    color: #000000;
-  }
-
-  .bayan__input:hover + .bayan__label > .bayan__content {
-    width: 40%;
-    height: auto;
-    visibility: visible;
-    transition: all 0.5s ease 0s;
-  }
-
-  .bayan__input:hover + .bayan__label .bayan__status {
-    background-image: url("img/icons/close.svg");
-  }
-  
 }
 
+@media (min-width: 1920px) and (hover: hover) {
+  .bayan__input:hover + .bayan__label > .bayan__content {
+    width: 40%;
+  }
+}
