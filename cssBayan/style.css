@@ -22,6 +22,9 @@ body {
 .bayan-block {
   width: 100%;
 }
+.bayan {
+  cursor: pointer;
+}
 
 .bayan-block__title {
   text-align: center;
@@ -41,6 +44,7 @@ body {
 .bayan__label {
   display: block;
   padding: 1rem 0;
+  cursor: pointer;
 }
 
 .bayan__header {
@@ -56,11 +60,10 @@ body {
   color: #0000FF;
 }
 
-.bayan__status {
-  background: center / cover url("img/icons/plus.svg");
-  background-size: 1rem 1rem;
+.bayan__status svg {
+  display: inline-block;
+  width: 1rem;
   height: 1rem;
-  flex: 0 0 1rem;
 }
 
 .bayan__content {
@@ -68,6 +71,7 @@ body {
   height: 0;
   margin: 0 auto;
   visibility: hidden;
+  transition: all 0.3s ease 0s;
 }
 
 .bayan__content img {
@@ -86,10 +90,6 @@ body {
   color: #000000;
 }
 
-.bayan__input:checked + .bayan__label .bayan__status {
-  background-image: url("img/icons/close.svg");
-}
-
 @media (hover: hover) {
   .bayan__status {
     opacity: 0;
@@ -106,14 +106,14 @@ body {
 
   .bayan__input:hover + .bayan__label > .bayan__content {
     width: 60%;
-    height: auto;
+    height: 100%;
     visibility: visible;
     transition: all 0.5s ease 0s;
     padding-top: 1rem;
   }
 
   .bayan__input:hover + .bayan__label .bayan__status {
-    background-image: url("img/icons/close.svg");
+    transform: rotate(45deg);
     transition: all 0.3s ease 0s;
   }
 }
@@ -150,17 +150,12 @@ body {
   }
 
   .bayan {
-    border: 1px solid rgba(109, 109, 109, 0.5);
-    cursor: pointer;
+    border: 0.1rem solid rgba(109, 109, 109, 0.5);
     padding: 1rem;
   }
 
   .bayan__input:checked + .bayan__label > .bayan__content {
     width: 40%;
-  }
-
-  .bayan__label {
-    cursor: pointer;
   }
 
   .bayan__header {
@@ -173,4 +168,16 @@ body {
   .bayan__input:hover + .bayan__label > .bayan__content {
     width: 40%;
   }
+}
+
+.bayan__item:active {
+  opacity: 0.6;
+}
+
+.bayan__item:active .bayan__label .bayan__title {
+  color: #0000FF;
+}
+
+.bayan__item:active .bayan__status svg path {
+  fill: #0000FF;
 }
